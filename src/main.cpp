@@ -9,6 +9,8 @@
 #include "balloon.h"
 #include "beam.h"
 #include "magnet.h"
+#include "powerup.h"
+#include "ring.h"
 
 using namespace std;
 
@@ -32,8 +34,12 @@ Sky skies[1000];
 Enemy enemies[10];
 Beam beams[5];
 Boomerang boom;
-Boomerang boom2;
+// Boomerang boom2;
+Powerup powerup;
+Powerup powerup2;
 Magnet magnet;
+Ring ring;
+Ring ring2;
 
 float screen_zoom = 0.5, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -104,8 +110,15 @@ void draw() {
     magnet.draw(VP);
     if(boom.kill == 0)
     	boom.draw(VP);
-    if(ball1.position.x >= 900)
-    	boom2.draw(VP);
+    // if(boom2.kill == 0)
+    // 	boom2.draw(VP);
+    if(powerup.kill == 0)
+    	powerup.draw(VP);
+    if(powerup2.kill == 0)
+    	powerup2.draw(VP);
+
+    ring.draw(VP);
+    ring2.draw(VP);
     
     // for (int i = 0; i < 10; ++i)
     // {
@@ -136,9 +149,14 @@ void tick_input(GLFWwindow *window) {
 //call tick functions for each object
 void tick_elements() {
     ball1.tick();
-    boom.tick();
-    boom2.tick();
+    boom.tick(ball1);
+    // boom2.tick(ball1);
+    powerup.tick(ball1);
+    powerup2.tick(ball1);
     magnet.tick(ball1);
+    ring.tick(ball1);
+    ring2.tick(ball1);
+
     for (int i = 0; i < no_of_balloons; ++i)
     {
     	balloons[i].tick();
@@ -170,7 +188,11 @@ void initGL(GLFWwindow *window, int width, int height) {
     magnet = Magnet(900, 0, COLOR_TURQUOISE);
     ground = Ground(-300, -300, COLOR_FUCHSIA);
     boom = Boomerang(250, 250, COLOR_WHITE);
-    boom2 = Boomerang(1150, 1150, COLOR_WHITE);
+    // boom2 = Boomerang(1650, 250, COLOR_WHITE);
+    powerup = Powerup(2100, -150, COLOR_MARINE);
+    powerup2 = Powerup(4000, -150, COLOR_MARINE);
+    ring = Ring(4500, 0, 50, COLOR_TURQUOISE);
+    ring2 = Ring(4500, 0, 40, COLOR_BACKGROUND);
     int j = 0;
     long long int n1, n2, n3;
 
@@ -300,6 +322,33 @@ int main(int argc, char **argv) {
                 lives--;
                 printf("LIVES REMAINING: %lld ", lives );
             }
+            // if ((detect_collision(ball1.player_box, boom2.boom_box)==1) && (boom2.kill == 0)) 
+            // {
+            //     boom2.kill = 1;
+            //     lives--;
+            //     printf("LIVES REMAINING: %lld ", lives );
+            // }
+
+            if ((detect_collision(ball1.player_box, powerup.power_box)==1) && (powerup.kill == 0)) 
+            {
+                powerup.kill = 1;
+                lives+=5;
+                printf("LIVES REMAINING: %lld ", lives );
+            }
+
+            if ((detect_collision(ball1.player_box, powerup2.power_box)==1) && (powerup2.kill == 0)) 
+            {
+                powerup2.kill = 1;
+                lives+=5;
+                printf("LIVES REMAINING: %lld ", lives );
+            }
+
+            if ((detect_collision(ball1.player_box, ring.ring_box)==1) && (ring.score == 0)) 
+            {
+                ring.score = 1;
+                // lives+=5;
+                printf("Collided!");
+            }
 
             for (int i = 0; i < 5; ++i)
             {
@@ -310,6 +359,9 @@ int main(int argc, char **argv) {
                     printf("LIVES REMAINING: %lld ", lives );
                 }
             }
+
+            // if(ball1.position.x == 870)
+            // 	boom2 = Boomerang(1150, 1150, COLOR_WHITE);
 
             float magnetx, magnety;
 		    magnetx = magnet.position.x;

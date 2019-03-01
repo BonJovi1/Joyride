@@ -12,6 +12,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn1.dir/src/main.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o"
+  "CMakeFiles/graphics_asgn1.dir/src/powerup.cpp.o"
+  "CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/sky.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o"
   "graphics_asgn1.pdb"

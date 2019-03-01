@@ -5,7 +5,7 @@ Boomerang::Boomerang(float x, float y, color_t color) {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0;
     this->kill = 0;
-
+    this->start = 0;
     this->boom_box.height = 22;
     this->boom_box.width = 20;
     this->boom_box.x = x + 10;
@@ -41,14 +41,19 @@ void Boomerang::draw(glm::mat4 VP) {
     draw3DObject(this->object);
 }
 
-void Boomerang::tick() 
+void Boomerang::tick(Ball ball1) 
 {
-    this->position.y -= 4;
-    this->position.x = ((this->position.y ) * (this->position.y))/250;
-    this->boom_box.x = this->position.x + 10;
-    this->boom_box.y = this->position.y + 11;
+    if (this->position.x - ball1.position.x <= 300)
+    	this->start = 1;
+    if(this->start == 1)
+    {
+	    this->position.y -= 4;
+	    this->position.x = ((this->position.y ) * (this->position.y))/250;
+	    this->boom_box.x = this->position.x + 10;
+	    this->boom_box.y = this->position.y + 11;
 
-    if(this->position.y <= -200)
-        this->kill = 1;
+	    if(this->position.y <= -200)
+	        this->kill = 1;
+	}
 }
 

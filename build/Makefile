@@ -949,6 +949,60 @@ src/other_handlers.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.s
 .PHONY : src/other_handlers.cpp.s
 
+src/powerup.o: src/powerup.cpp.o
+
+.PHONY : src/powerup.o
+
+# target to build an object file
+src/powerup.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/powerup.cpp.o
+.PHONY : src/powerup.cpp.o
+
+src/powerup.i: src/powerup.cpp.i
+
+.PHONY : src/powerup.i
+
+# target to preprocess a source file
+src/powerup.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/powerup.cpp.i
+.PHONY : src/powerup.cpp.i
+
+src/powerup.s: src/powerup.cpp.s
+
+.PHONY : src/powerup.s
+
+# target to generate assembly for a file
+src/powerup.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/powerup.cpp.s
+.PHONY : src/powerup.cpp.s
+
+src/ring.o: src/ring.cpp.o
+
+.PHONY : src/ring.o
+
+# target to build an object file
+src/ring.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o
+.PHONY : src/ring.cpp.o
+
+src/ring.i: src/ring.cpp.i
+
+.PHONY : src/ring.i
+
+# target to preprocess a source file
+src/ring.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ring.cpp.i
+.PHONY : src/ring.cpp.i
+
+src/ring.s: src/ring.cpp.s
+
+.PHONY : src/ring.s
+
+# target to generate assembly for a file
+src/ring.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ring.cpp.s
+.PHONY : src/ring.cpp.s
+
 src/sky.o: src/sky.cpp.o
 
 .PHONY : src/sky.o
@@ -1088,6 +1142,12 @@ help:
 	@echo "... src/other_handlers.o"
 	@echo "... src/other_handlers.i"
 	@echo "... src/other_handlers.s"
+	@echo "... src/powerup.o"
+	@echo "... src/powerup.i"
+	@echo "... src/powerup.s"
+	@echo "... src/ring.o"
+	@echo "... src/ring.i"
+	@echo "... src/ring.s"
 	@echo "... src/sky.o"
 	@echo "... src/sky.i"
 	@echo "... src/sky.s"

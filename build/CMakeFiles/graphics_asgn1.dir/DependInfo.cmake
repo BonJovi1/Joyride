@@ -17,6 +17,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/abhinav/joyride/src/main.cpp" "/Users/abhinav/joyride/build/CMakeFiles/graphics_asgn1.dir/src/main.cpp.o"
   "/Users/abhinav/joyride/src/nonedit.cpp" "/Users/abhinav/joyride/build/CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o"
   "/Users/abhinav/joyride/src/other_handlers.cpp" "/Users/abhinav/joyride/build/CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o"
+  "/Users/abhinav/joyride/src/powerup.cpp" "/Users/abhinav/joyride/build/CMakeFiles/graphics_asgn1.dir/src/powerup.cpp.o"
+  "/Users/abhinav/joyride/src/ring.cpp" "/Users/abhinav/joyride/build/CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o"
   "/Users/abhinav/joyride/src/sky.cpp" "/Users/abhinav/joyride/build/CMakeFiles/graphics_asgn1.dir/src/sky.cpp.o"
   "/Users/abhinav/joyride/src/timer.cpp" "/Users/abhinav/joyride/build/CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o"
   )
